@@ -1,6 +1,6 @@
 from requests_html import HTMLSession
-import pandas as pd
 import re
+import pandas as pd
 import numpy as np
 import datetime as dt
 
@@ -22,12 +22,11 @@ def tescoPriceScrape(url, category, n_pages=5):
 	products = pd.DataFrame()
 	i = 1
 	while i < n_pages:
-	#To limit the run-time for testing, we only scrape 2 pages of each category
 	
 #         print("Getting {} Page {}".format(key, i))
-		
 		r = session.get(url+str(i))
 		if r.status_code == 404:
+			print('reached the end')
 			# If we are not able to reach the page we break
 			break
 
@@ -36,7 +35,7 @@ def tescoPriceScrape(url, category, n_pages=5):
 		for n in productTiles:
 			if re.findall('Sorry, this product is currently unavailable', n):
 				#If the product is not available, we skip it
-				print("{} out of stock.".format(re.findall(productRegex['product_Match'], n)[0][1]))
+				# print("{} out of stock.".format(re.findall(productRegex['product_Match'], n)[0][1]))
 				continue
 			product = re.findall(productRegex['product_Match'], n)[0]
 			productID = product[0]

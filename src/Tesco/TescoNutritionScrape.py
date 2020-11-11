@@ -1,10 +1,8 @@
 from requests_html import HTMLSession
-import pandas as pd
 import re
+import pandas as pd
 import numpy as np
 import datetime as dt
-
-
 
 def tescoNutritionScrape(product_ids):
 
@@ -22,7 +20,6 @@ def tescoNutritionScrape(product_ids):
 
 	for i in range(0, len(product_ids)):
 		product_id = str(product_ids[i])
-		print(product_id)
 		# This can take a while so we print the progress
 		if count % 10 == 0:
 			print('Progress: {}%'.format(int(100*count/len(product_ids))))
@@ -90,6 +87,6 @@ def tescoNutritionScrape(product_ids):
 		df_nutrition = df_nutrition.append(df2)
 
 	print('Progress: Done')
-	print('{} products with missing nutritional information'.format(len(product_ids) - df_nutrition.shape[0]))
+	print('{} products with missing nutritional information out of {}'.format(len(product_ids) - df_nutrition.shape[0], len(product_ids)))
 
 	return df_nutrition
