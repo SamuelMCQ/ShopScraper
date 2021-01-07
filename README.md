@@ -22,4 +22,6 @@ _Optional_
 
 `TescoBokehPlot.py` can also be run which will generate an interactive bokeh plot to visualise the data. 
 
+![alt tag](https://user-images.githubusercontent.com/36965310/103894902-38ccf600-50f8-11eb-9540-338bd8b133d4.png)
+
 **WIP**
