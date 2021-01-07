@@ -1,7 +1,7 @@
 # ShopScraper
 A project to scrape nutritional and pricing information
 
-**Note: Using this script might get you IP banned from Tesco.com**
+**Note: Using this script might get you temporarily IP banned from Tesco.com**
 
 # Setup
 Clone this repo and run `pip install -r requirements.txt` in the root directory.
@@ -20,4 +20,6 @@ Running `TescoScraper.py` will first scrape the pricing data using `TescoPriceSc
 
 _Optional_
 
-`TescoBokehPlot.py` can also be run which will generate an interactive bokeh plot to visualise the data. **WIP**
+`TescoBokehPlot.py` can also be run which will generate an interactive bokeh plot to visualise the data. 
+
+**WIP**
